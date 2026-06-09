@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkin Park - Sitio Oficial</title>
+    <style>
+        /* Tipografía y Colores del Último Álbum (Rosa, Azul, Negro) */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, .oo-title {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            text-transform: uppercase;
+            margin-top: 0;
+            letter-spacing: -1px;
+        }
+
+        .text-pink { color: #ff007f; }
+        .text-blue { color: #00d2ff; }
+
+        .xxx-text {
+            color: #dddddd;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contenedor multimedia base */
+        .real-media-container {
+            border: 2px solid #333;
+            background-color: #111;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        /* Estilos aplicados directamente a tus fotos de Descargas */
+        .img-oval { 
+            width: 280px;
+            height: 320px;
+            border-radius: 50% / 30%; 
+            object-fit: cover;
+            border: 2px solid #ff007f;
+            flex-shrink: 0;
+        }
+
+        .img-circle { 
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 2px solid #00d2ff; 
+            box-sizing: border-box;
+        }
+
+        .img-tall { 
+            width: 200px;
+            height: 240px;
+            border-radius: 8px; 
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* Contenedores para las vistas previas de video */
+        .video-box {
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #111;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .video-box img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        /* Botón de reproducción */
+        .play-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            background-color: #ff007f;
+            color: #ffffff;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: background-color 0.2s, transform 0.2s;
+            text-align: center;
+        }
+        .play-btn.btn-blue {
+            background-color: #00d2ff;
+            color: #000000;
+        }
+        .play-btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.2);
+        }
+
+        /* Tabla de datos */
+        .wireframe-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .wireframe-table th {
+            background-color: #111;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.85rem;
+            padding: 12px;
+            border: 1px solid #333;
+            text-align: left;
+        }
+        .wireframe-table td {
+            border: 1px solid #333;
+            padding: 12px;
+            font-size: 0.95rem;
+        }
+
+        /* PÁGINA 1: INTRODUCCIÓN */
+        .intro-page {
+            border: 2px solid #ff0000;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-sizing: border-box;
+        }
+
+        /* PÁGINA 2: CUADRÍCULA DE CONTENIDO */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-left: 2px solid #ff0000;
+            border-top: 2px solid #ff0000;
+            margin-bottom: 40px;
+        }
+
+        .quadrant {
+            padding: 25px;
+            border-right: 2px solid #ff0000;
+            border-bottom: 2px solid #ff0000;
+            box-sizing: border-box;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* PÁGINA 3: SECCIÓN INFERIOR */
+        .merch-section {
+            border: 2px solid #ff0000;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .url-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .url-box {
+            border: 2px solid #555;
+            background: #0a0a0a;
+            border-radius: 6px;
+            overflow: hidden;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .url-box .url-top {
+            padding: 12px;
+            font-weight: bold;
+            background-color: #111;
+            border-bottom: 1px solid #555;
+            font-size: 0.9rem;
+            font-family: 'Arial Black', sans-serif;
+        }
+        .url-box .url-bottom {
+            padding: 10px;
+            font-size: 0.8rem;
+            color: #00d2ff;
+            background-color: #050505;
+        }
+        .url-box:hover {
+            border-color: #ff007f;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 900px) {
+            .content-grid, .url-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PÁGINA 1: INTRODUCCIÓN TOTAL -->
+    <div class="intro-page">
+        <h2 class="oo-title text-pink" style="font-size: 1.8rem; margin-bottom: 20px;">000 Introducción</h2>
+        
+        <div style="display: flex; gap: 30px; margin-bottom: 30px; align-items: flex-start; flex-wrap: wrap;">
+            <div class="xxx-text" style="flex: 2; min-width: 300px; font-size: 1.05rem; text-align: justify;">
+                <p>
+                    Buscamos dar a conocer a más público la banda <strong>Linkin Park</strong> y todo lo que estos han logrado a lo largo de su legendaria carrera, marcando un antes y un después en el rock alternativo y el nu metal a nivel mundial. Desde su formación en Agoura Hills, California, la agrupación revolucionó la industria musical al fusionar de manera perfecta géneros que parecían opuestos: el metal pesado, el hip-hop, el rock alternativo y la música electrónica, creando un sonido único, crudo y sumamente emocional.
+                </p>
+                <p>
+                    Con el lanzamiento de su álbum debut <em>Hybrid Theory</em> en el año 2000, la banda alcanzó un éxito global masivo instantáneo, convirtiéndose en la voz de toda una generación que encontró catarsis en sus letras sobre la alienación, los problemas de salud mental y las batallas internas. Himnos eternos como "In the End", "Crawling" y posteriormente "Numb" consolidaron su estatus en la cima del rock moderno, acumulando más de 100 millones de discos vendidos a lo largo de los años y múltiples premios Grammy.
+                </p>
+                <p>
+                    A pesar de enfrentar duras tragedias como la dolorosa pérdida de su vocalista principal Chester Bennington en 2017, la banda ha demostrado una resiliencia inquebrantable. En 2024, Linkin Park abrió los brazos a una nueva e histórica era con el lanzamiento del álbum <em>From Zero</em>, incorporando una nueva alineación para mantener vivo su increíble legado y seguir inspirando a millones de fanáticos, tanto a los de la vieja escuela como a las nuevas generaciones que apenas descubren su poderosa propuesta sonora.
+                </p>
+            </div>
+            <!-- TU ARCHIVO: Park.jpg -->
+            <img src="Park.jpg" alt="Linkin Park" class="img-oval" style="margin-top: 15px;">
+        </div>
+
+        <!-- Fila multimedia de la introducción -->
+        <div style="display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 25px; flex-wrap: wrap;">
+            <div>
+                <!-- TU ARCHIVO: Numb.png -->
+                <div class="video-box">
+                    <img src="Numb.png" alt="Numb Video Preview">
+                </div>
+                <a href="https://www.youtube.com/watch?v=kXYiU_JCYtU" target="_blank" class="play-btn">▶ Reproducir "Numb" (Video Oficial)</a>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: flex-start;">
+                <table class="wireframe-table">
+                    <thead>
+                        <tr><th colspan="2" style="color:#ff007f; text-align: center;">DATOS HISTÓRICOS CLAVE</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Miembros Activos</strong></td><td>6 integrantes</td></tr>
+                        <tr><td><strong>Origen</strong></td><td>Agoura Hills, California, EE.UU.</td></tr>
+                        <tr><td><strong>Ventas Globales</strong></td><td>Más de 100 Millones de copias</td></tr>
+                        <tr><td><strong>Último Lanzamiento</strong></td><td>From Zero (Nueva Era)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PÁGINA 2: CUADRÍCULA DE CONTENIDOS -->
+    <div class="content-grid">
+        
+        <!-- CUADRANTE SUPERIOR: GALERÍA MULTIMEDIA -->
+        <div class="quadrant" style="grid-column: 1 / span 2;">
+            <h2 class="oo-title text-blue">000 Galería</h2>
+            
+            <div class="gallery-grid">
+                <!-- TUS ARCHIVOS: Epic.png y Lossigmas.jpg -->
+                <img src="Epic.png" alt="Concierto En Vivo 1" class="img-circle">
+                <img src="Lossigmas.jpg" alt="Concierto En Vivo 2" class="img-circle">
+                
+                <div>
+                    <!-- TU ARCHIVO CON ESPACIOS EXACTOS: Heavy is the crown.png -->
+                    <div class="video-box">
+                        <img src="Heavy is the crown.png" alt="Heavy Is The Crown Preview">
+                    </div>
+                    <a href="https://youtu.be/ZAt8oxY0GQo?si=x2v3KPdj0JesklFA" target="_blank" class="play-btn btn-blue">▶ "Heavy Is The Crown"</a>
+                </div>
+                <div>
+                    <!-- TU ARCHIVO: Lost.png -->
+                    <div class="video-box">
+                        <img src="Lost.png" alt="Lost Preview">
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=7NK_JOkuSVY" target="_blank" class="play-btn btn-blue">▶ "Lost" (Official Animation)</a>
+                </div>
+                
+                <!-- TUS ARCHIVOS: Linkin.jpg y repetición de Park.jpg -->
+                <img src="Linkin.jpg" alt="Linkin Park Era Clásica" class="img-circle">
+                <img src="Park.jpg" alt="Linkin Park Era Nueva" class="img-circle">
+            </div>
+
+            <div class="xxx-text">
+                XXX Registro visual en directo de los conciertos e himnos más icónicos de las últimas décadas.
+            </div>
+        </div>
+
+        <!-- CUADRANTE INFERIOR IZQUIERDO: HISTORIA CHESTER -->
+        <div class="quadrant">
+            <h2 class="oo-title text-pink">000 Historia Chester</h2>
+            
+            <div style="display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; flex-wrap: wrap;">
+                <div class="xxx-text" style="flex: 1; min-width: 200px;">
+                    <strong>Chester Bennington</strong> fue una de las voces más colosales del siglo XXI. Su impresionante rango vocal combinaba melodías impecables con gritos viscerales cargados de emoción pura, dándole identidad única a himnos como <em>"In the End"</em> y <em>"Numb"</em>.
+                </div>
+                <!-- TU ARCHIVO CORREGIDO: Busca exactamente 'Chester.png' con mayúscula -->
+                <img src="Chester.png" alt="Chester Bennington" class="img-tall" style="border: 2px solid #ff007f;">
+            </div>
+
+            <div class="xxx-text">
+                XXX Su trágica partida en 2017 unió al mundo en luto, dejando un legado indestructible de catarsis a través de la música y letras dedicadas a la salud mental.
+            </div>
+
+            <div style="margin-top: 15px;">
+                <div class="video-box">
+                    <img src="Linkin.jpg" alt="In The End Preview">
+                </div>
+                <a href="https://www.youtube.com/watch?v=eVTXPUF4Oz4" target="_blank" class="play-btn">▶ "In The End" (Official Video)</a>
+            </div>
+        </div>
+
+        <!-- CUADRANTE INFERIOR DERECHO: APARICIÓN EMILY -->
+        <div class="quadrant">
+            <h2 class="oo-title text-blue">000 Aparición Emily</h2>
+            
+            <div style="display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; flex-wrap: wrap;">
+                <div class="xxx-text" style="flex: 1; min-width: 200px;">
+                    En 2024, Linkin Park inició una nueva era histórica al anunciar el regreso a los estudios de grabación de los miembros originales junto a su nueva colíder vocalista.
+                </div>
+                <!-- TU ARCHIVO: Emily.png -->
+                <img src="Emily.png" alt="Emily Armstrong Perfil" class="img-tall" style="border: 2px solid #00d2ff;">
+            </div>
+
+            <div class="xxx-text">
+                XXX La incorporación de una voz potente e intensa permite reinterpretar las canciones de la banda respetando su esencia, mientras lanzan nuevos éxitos como el aclamado sencillo <em>"The Emptiness Machine"</em>.
+            </div>
+
+            <div style="margin-top: 15px;">
+                <div class="video-box">
+                    <img src="Heavy is the crown.png" alt="The Emptiness Machine Preview">
+                </div>
+                <a href="https://youtu.be/SRXH9AbT280?si=UBrRQgQ49FT6a-EF" target="_blank" class="play-btn btn-blue">▶ "The Emptiness Machine"</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- PÁGINA 3: SECCIÓN INFERIOR -->
+    <div class="merch-section">
+        <div class="xxx-text" style="font-size: 1.05rem;">
+            La página cuenta con fotos reales y un estilo referente a los colores del último álbum de la banda (rosa, azul y negro).
+        </div>
+
+        <div class="url-grid">
+            <a href="https://www.linkinpark.com" target="_blank" class="url-box">
+                <div class="url-top">Sitio Oficial Global</div>
+                <div class="url-bottom">linkinpark.com</div>
+            </a>
+            <a href="https://store.linkinpark.com" target="_blank" class="url-box">
+                <div class="url-top">Tienda de Merch y Ropa</div>
+                <div class="url-bottom">store.linkinpark.com</div>
+            </a>
+            <a href="https://open.spotify.com/artist/6XyY86Qv1Z6Zs4vSStwH6S" target="_blank" class="url-box">
+                <div class="url-top">Escuchar en Spotify</div>
+                <div class="url-bottom">open.spotify.com</div>
+            </a>
+            <a href="https://www.youtube.com/@linkinpark" target="_blank" class="url-box">
+                <div class="url-top">Canal Oficial de YouTube</div>
+                <div class="url-bottom">youtube.com/@linkinpark</div>
+            </a>
+            <a href="https://music.apple.com/us/artist/linkin-park/148662" target="_blank" class="url-box">
+                <div class="url-top">Escuchar en Apple Music</div>
+                <div class="url-bottom">music.apple.com</div>
+            </a>
+            <a href="https://www.linkinpark.com/#tour" target="_blank" class="url-box">
+                <div class="url-top">Fechas y Boletas de Gira</div>
+                <div class="url-bottom">linkinpark.com/#tour</div>
+            </a>
+        </div>
+
+        <div class="xxx-text" style="margin-bottom: 0;">
+            XXX Explora todo el contenido interactivo y adquiere los productos licenciados oficiales en las plataformas validadas.
+        </div>
+    </div>
+
+</body>
+</html>
